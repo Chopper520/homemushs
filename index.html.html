@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home Mushs - Premium Fresh Mushrooms | Rwanda</title>
+  <meta name="description" content="Premium fresh mushrooms delivered to your door in Rwanda. Quality guaranteed, farm fresh mushrooms for every occasion.">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 50%, #66BB6A 100%);
+      padding: 2rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: float 20s infinite linear;
+    }
+    
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
+    }
+    
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Navigation */
+    nav {
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid #4CAF50;
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(76,175,80,0.4), transparent);
+      transition: left 0.5s;
+    }
+    
+    nav a:hover::before {
+      left: 100%;
+    }
+    
+    nav a:hover {
+      background: rgba(76,175,80,0.2);
+      color: #4CAF50;
+      transform: translateY(-2px);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="50" cy="10" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="20" cy="80" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(45deg, #4CAF50, #81C784, #A5D6A7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+      color: #e0e0e0;
+      font-weight: 300;
+    }
+    
+    .hero-cta {
+      background: linear-gradient(45deg, #4CAF50, #66BB6A);
+      color: white;
+      padding: 1.2rem 3rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: inline-block;
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s;
+    }
+    
+    .hero-cta:hover::before {
+      left: 100%;
+    }
+    
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(76, 175, 80, 0.6);
+    }
+    
+    /* Section Styling */
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .section h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      color: #4CAF50;
+      position: relative;
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #4CAF50, #81C784);
+      border-radius: 2px;
+    }
+    
+    /* Products Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .product {
+      background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+      border-radius: 20px;
+      padding: 1.8rem;
+      border: 1px solid #333;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(76,175,80,0.1) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .product:hover::before {
+      opacity: 1;
+    }
+    
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(76,175,80,0.5),
+        0 0 20px rgba(76,175,80,0.2);
+    }
+    
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .product:hover img {
+      transform: scale(1.05);
+    }
+    
+    .product h3 {
+      color: #4CAF50;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .product p {
+      color: #b0b0b0;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    
+    .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #4CAF50;
+      margin-bottom: 1.5rem;
+    }
+    
+    .order-btn {
+      background: linear-gradient(45deg, #4CAF50, #45a049);
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 12px;
+      display: block;
+      text-align: center;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .order-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    
+    .order-btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(76,175,80,0.4);
+    }
+    
+    /* About Section */
+    #about {
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      border-radius: 20px;
+      margin: 2rem;
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    #about::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(76,175,80,0.1) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: float 15s infinite linear reverse;
+    }
+    
+    #about p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Contact Section */
+    #contact {
+      background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+      border-radius: 20px;
+      margin: 2rem;
+      padding: 4rem;
+      text-align: center;
+    }
+    
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .contact-card {
+      background: rgba(76,175,80,0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(76,175,80,0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(76,175,80,0.2);
+    }
+    
+    .contact-card h4 {
+      color: #4CAF50;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .whatsapp-btn {
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 2rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #333;
+      margin-top: 4rem;
+    }
+    
+    /* Animations */
+    @keyframes float {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-50px, -50px) rotate(360deg); }
+    }
+    
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(76,175,80,0.5); }
+      to { text-shadow: 0 0 20px rgba(76,175,80,0.8); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .products {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+      
+      .section {
+        padding: 2rem 1rem;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Home Mushs</h1>
+  <p>Premium Fresh Mushrooms, Farm to Table</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <h2>Fresh Mushrooms Delivered to Your Door</h2>
+    <p>Experience the finest selection of premium, farm-fresh mushrooms grown with care and delivered with precision throughout Rwanda.</p>
+    <a href="#products" class="hero-cta">Explore Our Selection</a>
+  </div>
+</div>
+
+<section id="products" class="section">
+  <h2>Our Premium Mushroom Collection</h2>
+  <div class="products">
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1592928309441-262f4d4a2f90" alt="White Button Mushroom" />
+      <h3>White Button Mushroom</h3>
+      <p>Classic and versatile, perfect for everyday cooking with a mild, earthy flavor.</p>
+      <div class="price">2,000 RWF</div>
+      <a href="#contact" class="order-btn">Order Now</a>
+    </div>
+    
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783" alt="Oyster Mushroom" />
+      <h3>Oyster Mushroom</h3>
+      <p>Delicate texture with subtle nutty flavor, rich in protein and nutrients.</p>
+      <div class="price">2,000 RWF</div>
+      <a href="#contact" class="order-btn">Order Now</a>
+    </div>
+    
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1587049352849-f7667c273c8a" alt="Shiitake Mushroom" />
+      <h3>Shiitake Mushroom</h3>
+      <p>Premium quality with rich umami flavor, perfect for gourmet dishes.</p>
+      <div class="price">2,000 RWF</div>
+      <a href="#contact" class="order-btn">Order Now</a>
+    </div>
+    
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919" alt="Cremini Mushroom" />
+      <h3>Cremini Mushroom</h3>
+      <p>Hearty and earthy flavor beloved by professional chefs worldwide.</p>
+      <div class="price">2,000 RWF</div>
+      <a href="#contact" class="order-btn">Order Now</a>
+    </div>
+    
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1624378439575-1c78f7be9dcb" alt="Portobello Mushroom" />
+      <h3>Portobello Mushroom</h3>
+      <p>Large, meaty caps perfect for grilling or as a meat substitute.</p>
+      <div class="price">2,000 RWF</div>
+      <a href="#contact" class="order-btn">Order Now</a>
+    </div>
+    
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1615485925485-ec4013ba5f2f" alt="Enoki Mushroom" />
+      <h3>Enoki Mushroom</h3>
+      <p>Delicate, crispy texture ideal for soups, salads, and stir-fries.</p>
+      <div class="price">2,000 RWF</div>
+      <a href="#contact" class="order-btn">Order Now</a>
+    </div>
+    
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1639676343637-bc7580040ab7" alt="King Oyster Mushroom" />
+      <h3>King Oyster Mushroom</h3>
+      <p>Thick, meaty stems with intense umami flavor, excellent for slicing.</p>
+      <div class="price">2,000 RWF</div>
+      <a href="#contact" class="order-btn">Order Now</a>
+    </div>
+    
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1609772321684-7d2d3c6e41f2" alt="Lion's Mane Mushroom" />
+      <h3>Lion's Mane Mushroom</h3>
+      <p>Unique seafood-like texture with potential cognitive health benefits.</p>
+      <div class="price">2,000 RWF</div>
+      <a href="#contact" class="order-btn">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About Home Mushs</h2>
+  <p>Founded with a passion for quality and freshness.</p>
+    <p> Home Mushs is Rwanda's premier mushroom supplier.</p>
+    <p> We work directly with local farmers who use sustainable growing practices to ensure every mushroom meets our strict quality standards.</p>
+   <p>Our mission is to make premium, nutritious mushrooms accessible to every household and restaurant across Rwanda. </p>
+   </p>From farm to table, we guarantee freshness and quality in every delivery.</p>
+  <p>We take pride in our cold-chain delivery system that preserves the natural flavor and nutritional value of our mushrooms from harvest to your doorstep.</p>
+</section>
+
+<section id="contact" class="section">
+  <h2>Get In Touch</h2>
+  <div class="contact-info">
+    <div class="contact-card">
+      <h4>📞 Call Us</h4>
+      <p>+250 783 944 202</p>
+      <p>Mon-Sat: 8AM - 6PM</p>
+    </div>
+    
+    <div class="contact-card">
+      <h4>📧 Email</h4>
+      <p>safaritony7@gmail.com</p>
+      <p>Quick response guaranteed</p>
+    </div>
+    
+    <div class="contact-card">
+      <h4>📍 Location</h4>
+      <p>Kigali, Rwanda</p>
+      <p>Serving Greater Kigali Area</p>
+    </div>
+  </div>
+  
+  <a href="https://wa.me/250783944202" class="whatsapp-btn">💬 Order on WhatsApp</a>
+</section>
+
+<footer>
+  <p>&copy; 2025 Home Mushs. All rights reserved. | A product of Chopper Techhouse</p>
+  <p>Fresh • Quality • Delivered Daily</p>
+</footer>
+</body>
+</html>
